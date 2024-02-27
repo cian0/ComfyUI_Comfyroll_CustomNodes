@@ -56,7 +56,7 @@ class CR_OverlayText:
     def INPUT_TYPES(s):
 
         font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "fonts")       
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                         
         return {"required": {
                 "image": ("IMAGE",),
@@ -122,7 +122,7 @@ class CR_DrawText:
     def INPUT_TYPES(s):
 
         font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "fonts")       
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                       
         return {"required": {
                     "image_width": ("INT", {"default": 512, "min": 64, "max": 2048}),
@@ -193,7 +193,7 @@ class CR_MaskText:
     def INPUT_TYPES(s):
 
         font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "fonts")       
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                       
         return {"required": {
                     "image": ("IMAGE",),
@@ -263,7 +263,7 @@ class CR_CompositeText:
     def INPUT_TYPES(s):
 
         font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "fonts")       
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                              
         return {"required": {
                     "image_text": ("IMAGE",),
@@ -359,7 +359,7 @@ class CR_SimpleTextWatermark:
     def INPUT_TYPES(s):
 
         font_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "fonts")       
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                
         ALIGN_OPTIONS = ["center", "top left", "top center", "top right", "bottom left", "bottom center", "bottom right"]  
                    
@@ -464,7 +464,7 @@ class CR_SelectFont:
         elif platform.system() == "Darwin":
             font_dir = "/System/Library/Fonts"    
  
-        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and f.lower().endswith(".ttf")]
+        file_list = [f for f in os.listdir(font_dir) if os.path.isfile(os.path.join(font_dir, f)) and (f.lower().endswith(".ttf") or f.lower().endswith(".otf"))]
                         
         return {"required": {
                 "font_name": (file_list,),
